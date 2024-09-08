@@ -1,0 +1,25 @@
+mat-card {
+    max-width: 400px;
+    margin: 2em auto;
+    text-align: center;
+    display: block;
+    justify-content: center;
+    
+    
+  }
+  
+  mat-stepper{
+    max-width: 600px;
+    margin: 2em auto;
+    text-align: center;
+    display: block;
+    justify-content: center;
+}
+
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .file-input {
+    display: none;
+  }

@@ -1,0 +1,35 @@
+<br><br>
+<h1 style="font-family: 'Courier New', Courier, monospace; font-size: 50px; color:aliceblue; font-weight: bold;">Portal
+    javnih poziva <br><br><br>
+    za naučne projekte</h1>
+<br><br><br>
+<mat-card>
+    <mat-card-title>
+        Prijava
+    </mat-card-title>
+    <mat-card-content>
+        <form>
+            <mat-form-field appearance="legacy">
+                <input matInput placeholder="Korisničko ime" name="username" [(ngModel)]='username' required>
+                <mat-error>
+                    Obavezno polje!
+                </mat-error>
+            </mat-form-field><br>
+            <mat-form-field appearance="legacy">
+                <input matInput type="password" placeholder="Lozinka" name="password" [(ngModel)]='password' required>
+                <mat-error>
+                    Obavezno polje!
+                </mat-error>
+            </mat-form-field><br>
+            <button mat-raised-button color="primary" (click)='login()'>Prijavite se</button>
+            <br><br>
+            <span>
+                Nemate nalog? Registrujte se <a routerLink='register'>ovde.</a>
+            </span>
+
+        </form><br>
+        <span
+            style="font-family: 'Courier New', Courier, monospace; text-align: center; font-weight: bold; font-size: 15px; color: crimson;"
+            *ngIf='message'>{{message}}</span>
+    </mat-card-content>
+</mat-card>

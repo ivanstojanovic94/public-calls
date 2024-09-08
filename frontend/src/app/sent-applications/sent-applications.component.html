@@ -1,0 +1,48 @@
+<br><br><br>
+<div *ngIf="sentApps.length==0" style="color: white; text-align: center; font-size: 20px; font-weight: bolder;">
+    Nemate nijednu poslatu prijavu
+</div>
+<mat-accordion class="example-headers-align" multi>
+    <mat-expansion-panel *ngFor='let app of sentApps; let i=index'>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                {{app.id}}
+            </mat-panel-title>
+            <mat-panel-description>
+                {{app.postingDate}}
+
+
+            </mat-panel-description>
+            <span *ngIf='app.status=="poslato"'>
+                <mat-icon [ngStyle]="{'color':'blue'}">loop</mat-icon>
+            </span>
+            <span *ngIf='app.status=="prihvaceno"'>
+                <mat-icon [ngStyle]="{'color':'blue'}">thumb_up</mat-icon>
+            </span>
+            <span *ngIf='app.status=="odbijeno"'>
+                <mat-icon [ngStyle]="{'color':'blue'}">thumb_down</mat-icon>
+            </span>&nbsp;&nbsp;&nbsp;&nbsp;
+
+        </mat-expansion-panel-header>
+        <div style="text-align: center;">
+            <span style="font-weight: bolder; font-size:20px"> {{app.callName}}</span>
+        </div><br>
+        <table style="justify-content: center;" cellspacing="8">
+            <tr *ngFor='let item of app.labels;let k=index'>
+                <td style="font-weight: bolder; font-size:15px">{{item}}:</td>
+                <td style="color: blueviolet; font-size:15px">{{appData[i].displayArr[k]}}</td>
+                <td *ngIf="filePropertyFlags[i][k]"><a href="{{uploadsURI}}{{appData[i].displayArr[k]}}"
+                        target="_blank">
+                        <mat-icon>attach_file</mat-icon>
+                    </a></td>
+
+            </tr>
+        </table><br>
+        <button mat-raised-button (click)="notShowingApp(app)">Obriši</button>
+
+
+
+
+
+    </mat-expansion-panel>
+</mat-accordion>

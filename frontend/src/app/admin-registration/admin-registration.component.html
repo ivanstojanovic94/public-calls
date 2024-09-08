@@ -1,0 +1,118 @@
+<br><br>
+<h1 style="font-family: 'Courier New', Courier, monospace; font-size: 40px; color:aliceblue; font-weight: bold;">
+    Definisanje podataka za registraciju korisnika</h1>
+<br><br>
+<mat-stepper linear #stepper>
+    <mat-step>
+
+        <form>
+            <ng-template matStepLabel>Korisničke grupe</ng-template>
+
+
+
+
+
+            <br>
+            <div style="justify-content: center;">
+                <h3>Dodavanje grupa</h3>
+                <mat-form-field>
+                    <mat-label>Grupa {{i}}</mat-label>
+                    <input matInput type="text" name="opcija" [(ngModel)]='userGroupOption'>
+
+                </mat-form-field>
+                <br>
+                <button mat-button (click)="addGroupOption()">Dodaj grupu {{i}}</button>
+
+            </div>
+            <br>
+
+            <div>
+                <button mat-raised-button color="primary" (click)="addGroup(stepper)">Dodaj podatak</button>
+            </div>
+            <br><br>
+
+            <div>
+                <button mat-button matStepperPrevious [disabled]="stepper.selectedIndex==0">Prethodno</button>
+                <button mat-button matStepperNext>Sledeće</button>
+            </div>
+        </form>
+
+    </mat-step>
+
+    <mat-step>
+
+        <form>
+            <ng-template matStepLabel>Ostali podaci</ng-template>
+
+            <mat-form-field>
+                <mat-label>Traženi podatak</mat-label>
+                <input matInput type="text" name="fieldName" [(ngModel)]='label'>
+            </mat-form-field><br>
+            <mat-form-field>
+                <mat-label>Tip podatka</mat-label>
+                <mat-select name="tip" [(ngModel)]='typeChecker'>
+                    <mat-option value="text">Tekstualni podatak</mat-option>
+                    <mat-option value="email">Email adresa</mat-option>
+                    <mat-option value="date">Datum</mat-option>
+                    <mat-option value="password">Lozinka</mat-option>
+                    <mat-option value="url">Link</mat-option>
+                    <mat-option value="file">Dokument</mat-option>
+                    <mat-option value="checkbox">Štikliranje</mat-option>
+                    <mat-option value="select">Padajući meni</mat-option>
+                    <mat-option value="radio">Radio dugme</mat-option>
+                </mat-select>
+            </mat-form-field><br>
+
+
+            <mat-checkbox name="required" [(ngModel)]='requiredData'>Obavezan podatak?</mat-checkbox>
+            <br><br>
+            <div *ngIf='typeChecker=="select" || typeChecker=="radio"' style="justify-content: center;">
+                <h3>Dodavanje opcija</h3>
+                <mat-form-field>
+                    <mat-label>Naziv</mat-label>
+                    <input matInput type="text" name="opcija" [(ngModel)]='optionValue'>
+
+                </mat-form-field>
+                <br>
+                <button mat-raised-button color="primary" (click)="addOption()">Dodaj opciju</button>
+
+            </div>
+            <br>
+            <div>
+                <button mat-raised-button color="primary" (click)="addData()">Dodaj podatak</button>
+            </div>
+            <br><br>
+
+            <div>
+                <button mat-button matStepperPrevious>Prethodno</button>
+                <button mat-button matStepperNext>Sledeće</button>
+            </div>
+        </form>
+
+    </mat-step>
+    <mat-step>
+
+        <ng-template matStepLabel>
+            Pregled</ng-template>
+        <div
+            style="font-family: 'Courier New', Courier, monospace; color: blueviolet; text-align: left; font-weight: bold;">
+
+            <ul>
+
+                <li *ngFor='let item of registrationData'>{{item.label}}</li>
+            </ul>
+
+            <button mat-raised-button color="primary" (click)="addRegistrationTemplate(stepper)">Objavi</button>
+        </div><br><br>
+        <div>
+            <button mat-button matStepperPrevious>Prethodno</button>
+            <button mat-button matStepperNext [disabled]="stepper.selectedIndex === stepper.steps.length-1">Sledeće
+
+            </button>
+
+        </div>
+
+
+    </mat-step>
+</mat-stepper>
+<br><br>

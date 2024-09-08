@@ -1,0 +1,18 @@
+<br>
+<mat-radio-group [(ngModel)]="selected">
+  <mat-radio-button *ngFor="let report of reports" [value]="report">
+    <span style="color: white;"> {{report}} </span> &nbsp; &nbsp;
+  </mat-radio-button>
+</mat-radio-group>
+<br>
+<app-report1 *ngIf="selected=='Prijave po pozivu'">
+
+</app-report1>
+
+<app-report2 *ngIf="selected=='Prijave po naučnom polju'">
+
+</app-report2>
+
+<app-report3 *ngIf="selected=='Prijave po instituciji'">
+
+</app-report3>

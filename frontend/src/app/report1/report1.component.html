@@ -1,0 +1,53 @@
+<div>
+  <div class=" mat-elevation-z8">
+    <mat-table matTableExporter [dataSource]="dataSource" #exporter="matTableExporter">
+
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.call.id}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Naziv </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.call.name}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="publishDate">
+        <mat-header-cell *matHeaderCellDef> Datum objave </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.call.publishDate}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="deadline">
+        <mat-header-cell *matHeaderCellDef> Rok prijave </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.call.deadline}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="count">
+        <mat-header-cell *matHeaderCellDef> Broj prijava </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.count}} </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+    <mat-paginator [pageSizeOptions]="[3, 5, 10]" showFirstLastButtons></mat-paginator>
+
+  </div><br>
+  <div style="justify-content: center; align-items: center; text-align: center;">
+    <button mat-raised-button
+      (click)="exporter.exportTable('xlsx', {fileName:'test', sheet: 'sheet_name', Props: {Author: 'Talha'}})">Excel</button>
+    <button mat-raised-button (click)="exporter.exportTable('csv')">Csv</button>
+    <button mat-raised-button (click)="exporter.exportTable('json')">Json</button>
+    <button mat-raised-button (click)="exporter.exportTable('txt')">Txt</button>
+  </div>
+
+
+  <div class="chart-container">
+    <div class="spectre-bar-chart">
+      <ngx-charts-bar-vertical [view]="[800,200]" [results]="data" [xAxisLabel]="'Javni pozivi'"
+        [yAxisLabel]="'Broj prijava'" [legend]="true" [showXAxisLabel]="true" [showYAxisLabel]="true" [xAxis]="true"
+        [yAxis]="true" [gradient]="true" style="fill: white;">
+      </ngx-charts-bar-vertical>
+    </div>
+  </div>
+</div>

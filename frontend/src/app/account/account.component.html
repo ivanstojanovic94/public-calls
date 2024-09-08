@@ -1,0 +1,95 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="return()">
+
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <span class="example-spacer"></span>
+  <button mat-icon-button (click)="notifications()" *ngIf="user.category!='admin'">
+    <mat-icon>notification_important</mat-icon>
+  </button>
+  <button mat-icon-button (click)="account()">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+</mat-toolbar>
+<br><br><br>
+<mat-card>
+  <mat-card-title style="font-family: 'Courier New', Courier, monospace;font-weight: bold;">
+    Informacije o nalogu<br><br>
+  </mat-card-title>
+  <mat-card-content>
+    <div
+      style="font-family: 'Courier New', Courier, monospace; color: blueviolet; text-align: center; font-weight: bold;">
+      Korisničko ime: {{user.username}} <br>
+      Grupa korisnika: {{user.category}}<br><br>
+    </div>
+
+
+    <mat-divider></mat-divider>
+    <mat-accordion class="example-headers-align" multi>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Odjava
+          </mat-panel-title>
+
+        </mat-expansion-panel-header>
+        <button mat-raised-button color="primary" (click)='signOut()'>Odjavi se</button><br>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Promeni lozinku
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-form-field appearance="fill">
+          <mat-label>Trenutna lozinka</mat-label>
+          <input matInput type="password" name="currentPass" [(ngModel)]="currentPass" required>
+          <mat-error>Obavezno polje!</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Nova lozinka</mat-label>
+          <input matInput type="password" name="pass" [(ngModel)]="pass" required>
+          <mat-error>Obavezno polje!</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Potvrdi lozinku</mat-label>
+          <input matInput type="password" name="passconfirm" [(ngModel)]="passconfirm" required>
+          <mat-error>Obavezno polje!</mat-error>
+        </mat-form-field><br>
+        <button mat-raised-button color="primary" (click)="changePassword()">Sačuvaj</button>
+
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Deaktiviraj nalog
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-form-field apperance="fill">
+          <mat-label>
+            Trenutna lozinka
+          </mat-label>
+          <input matInput type="password" name="currentPass" [(ngModel)]="currentPass" required>
+          <mat-error>Obavezno polje!</mat-error>
+        </mat-form-field><br>
+        <button mat-raised-button color="primary" (click)="deactivateAccount()">Deaktiviraj</button>
+
+      </mat-expansion-panel>
+    </mat-accordion>
+    <br>
+    <div *ngIf="messagePassword">
+      <span
+        style="font-family: 'Courier New', Courier, monospace; text-align: center; font-weight: bold; font-size: 15px;"
+        [style.color]="success==true? 'green' : 'red'">
+        {{messagePassword}}
+        <br>
+      </span>
+      <span *ngIf="success==true" style="text-align: center; font-size: 12px;">
+        <a routerLink=''>Povratak</a> na stranu za prijavljivanje.
+      </span>
+
+    </div>
+  </mat-card-content>
+</mat-card>

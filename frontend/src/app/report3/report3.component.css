@@ -1,0 +1,52 @@
+.file-input {
+    display: none;
+  }
+  mat-table {
+    margin: 2em auto 0em;
+    width: 40%;
+
+    justify-content: center;
+  }
+  
+  
+  
+ 
+
+  mat-paginator{
+    width: 40%;
+    margin: 0em auto;
+    text-align: center;
+    display: block;
+    justify-content: center;
+
+  }
+
+  
+  mat-card {
+    max-width: 400px;
+    margin: 2em auto;
+    text-align: center;
+    display: block;
+    justify-content: center;
+    
+    
+  }
+  
+  
+  :host {
+    height: 100%;
+    width: 100%;
+}
+
+.chart-container {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.spectre-bar-chart {
+    height: 200px;
+    width: 800px;
+    margin: 5% auto;
+}
+
+  

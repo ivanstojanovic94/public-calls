@@ -1,0 +1,20 @@
+<h1 mat-dialog-title>
+
+</h1>
+<div mat-dialog-content>
+    <p
+        style="font-family: 'Courier New', Courier, monospace; color: black; text-align: center; font-weight: bolder; font-size: 25px;">
+        Želite li da sačuvate prijavu?
+    </p>
+    <br><br>
+    <p style="font-size: 15px;">
+        Ovo možete da sačuvate i da pošaljete kasnije iz nacrta.
+    </p>
+
+
+
+</div>
+<mat-dialog-actions align="end" style="justify-content: center;">
+    <button mat-raised-button color="primary" mat-dialog-close>Odbaci</button>
+    <button mat-raised-button color="primary" (click)="sacuvaj()" cdkFocusInitial>Sačuvaj</button>
+</mat-dialog-actions>

@@ -1,0 +1,215 @@
+{
+    "_id" : ObjectId("6134d0212ad2c01c4caf508d"),
+    "labels" : [ 
+        "Naziv organizacije", 
+        "Adresa", 
+        "Email", 
+        "Matični broj", 
+        "PIB", 
+        "Podnosilac je obveznik PDV-a", 
+        "Odgovorno lice", 
+        "Naučno zvanje", 
+        "Pun naziv projekta", 
+        "Broj angažovanih lica", 
+        "Plan projekta", 
+        "Plan budžeta"
+    ],
+    "data" : {
+        "nazivorganizacije" : "Health Care d.o.o.",
+        "adresa" : "Omladinskih brigada 123",
+        "email" : "healthcare@gmail.com",
+        "matičnibroj" : "123456789",
+        "pib" : "11111111111",
+        "podnosilacjeobveznikpdv-a" : true,
+        "odgovornolice" : "Petar Petrović",
+        "naučnozvanje" : "viši naučni saradnik",
+        "punnazivprojekta" : "From ML to PM",
+        "brojangažovanihlica" : "50",
+        "planprojekta" : "Plan projekta iz personalizovane medicine.docx",
+        "planbudžeta" : "Plan budzeta.xlsx"
+    },
+    "idCall" : 4,
+    "user" : "korisnik",
+    "field" : "medicinska oblast",
+    "institution" : "IMI ",
+    "postingDate" : "5/9/2021",
+    "callName" : "Razvoj personalizovane medicine",
+    "toShowUser" : 1,
+    "status" : "odbijeno",
+    "id" : 1,
+    "__v" : 0
+}
+{
+    "_id" : ObjectId("6134df1a4013e23f4c08fba7"),
+    "labels" : [ 
+        "Naziv projekta", 
+        "Plan i predlog projekta", 
+        "Prihvatam uslove javnog poziva?", 
+        "Podnosilac prijave", 
+        "Predviđeni rok završetka", 
+        "Dodatni dokument"
+    ],
+    "data" : {
+        "nazivprojekta" : "Opametimo Beograd!",
+        "planipredlogprojekta" : "MAKE BELGRADE SMART AGAIN.docx",
+        "prihvatamuslovejavnogpoziva?" : true,
+        "podnosilacprijave" : "fizičko lice",
+        "predviđenirokzavršetka" : "2022-07-28",
+        "dodatnidokument" : "Dokument (2).docx"
+    },
+    "idCall" : 5,
+    "user" : "korisnik2",
+    "field" : "tehničko-tehnološka oblast",
+    "institution" : "Grad Beograd",
+    "postingDate" : "5/9/2021",
+    "callName" : "Pametni grad Beogad",
+    "toShowUser" : 1,
+    "status" : "prihvaceno",
+    "id" : 2,
+    "__v" : 0
+}
+{
+    "_id" : ObjectId("6134df9d4013e23f4c08fba8"),
+    "labels" : [ 
+        "Naziv projekta", 
+        "Broj clanova tima", 
+        "Predvidjen rok zavrsetka"
+    ],
+    "data" : {
+        "nazivprojekta" : "Projekat za preciscavanje otpadnih voda",
+        "brojclanovatima" : "10",
+        "predvidjenrokzavrsetka" : "2021-12-10"
+    },
+    "idCall" : 3,
+    "user" : "korisnik",
+    "field" : "biotehnička oblast",
+    "institution" : "JKP Beograd",
+    "postingDate" : "5/9/2021",
+    "callName" : "Preciscavanje otpadnih voda",
+    "toShowUser" : 1,
+    "status" : "poslato",
+    "id" : 3,
+    "__v" : 0
+}
+{
+    "_id" : ObjectId("6134e0cd4013e23f4c08fba9"),
+    "labels" : [ 
+        "Naziv organizacije", 
+        "Adresa", 
+        "Email", 
+        "Matični broj", 
+        "PIB", 
+        "Podnosilac je obveznik PDV-a", 
+        "Odgovorno lice", 
+        "Naučno zvanje", 
+        "Pun naziv projekta", 
+        "Broj angažovanih lica", 
+        "Plan projekta", 
+        "Plan budžeta"
+    ],
+    "data" : {
+        "nazivorganizacije" : "Organizacija corp",
+        "adresa" : "Alekse Šantića 23",
+        "email" : "organization@yahoo.com",
+        "matičnibroj" : "12345",
+        "pib" : "1234567890",
+        "podnosilacjeobveznikpdv-a" : true,
+        "odgovornolice" : "Ana Anikic",
+        "naučnozvanje" : "naucni savetnik",
+        "punnazivprojekta" : "Projekat za unapredjenje personalizovane medicine u Srbiji",
+        "brojangažovanihlica" : "120",
+        "planprojekta" : "Dokument (3).docx",
+        "planbudžeta" : "Dokument (4).docx"
+    },
+    "idCall" : 4,
+    "user" : "korisnik2",
+    "field" : "medicinska oblast",
+    "institution" : "IMI ",
+    "postingDate" : "5/9/2021",
+    "callName" : "Razvoj personalizovane medicine",
+    "toShowUser" : 1,
+    "status" : "prihvaceno",
+    "id" : 4,
+    "__v" : 0
+}
+{
+    "_id" : ObjectId("6134e3614013e23f4c08fbab"),
+    "labels" : [ 
+        "Naziv projekta", 
+        "Plan projekta", 
+        "Podnosilac prijave", 
+        "Email", 
+        "Naucno zvanje", 
+        "Saglasan sam da se moji podaci koriste od strane organizatora poziva"
+    ],
+    "data" : {
+        "nazivprojekta" : "Test projekat",
+        "planprojekta" : "sn04qtjwz6gl.pdf",
+        "podnosilacprijave" : "Petar Petrovic",
+        "email" : "pera@gmail.com",
+        "naucnozvanje" : "naucni saradnik",
+        "saglasansamdasemojipodacikoristeodstraneorganizatorapoziva" : true
+    },
+    "idCall" : 6,
+    "user" : "korisnik",
+    "field" : "tehničko-tehnološka oblast",
+    "institution" : "Institucija Test",
+    "postingDate" : "5/9/2021",
+    "callName" : "Javni poziv Test",
+    "toShowUser" : 1,
+    "status" : "prihvaceno",
+    "id" : 5,
+    "__v" : 0
+}
+{
+    "_id" : ObjectId("6134e78daf72540d14e081e1"),
+    "labels" : [ 
+        "Adresa kompanije", 
+        "Oblast delatnosti", 
+        "Broj radnika"
+    ],
+    "data" : {
+        "adresakompanije" : "Adresac",
+        "oblastdelatnosti" : "tehnologija i razvoj",
+        "brojradnika" : "100"
+    },
+    "idCall" : 1,
+    "user" : "korisnik",
+    "field" : "medicinska oblast",
+    "institution" : "Vlada Republike Srbije",
+    "postingDate" : "5/9/2021",
+    "callName" : "Javni poziv 404",
+    "toShowUser" : 1,
+    "status" : "prihvaceno",
+    "id" : 6,
+    "__v" : 0
+}
+{
+    "_id" : ObjectId("6134e999af72540d14e081e5"),
+    "labels" : [ 
+        "Naziv projekta", 
+        "Plan projekta", 
+        "Podnosilac prijave", 
+        "Email", 
+        "Naucno zvanje", 
+        "Saglasan sam da se moji podaci koriste od strane organizatora poziva"
+    ],
+    "data" : {
+        "nazivprojekta" : "Test projekat od Marka",
+        "planprojekta" : "yjqxok6ehiyv.pdf",
+        "podnosilacprijave" : "Marko Markovic",
+        "email" : "markomarkovic@gmail.com",
+        "naucnozvanje" : "naucni saradnik",
+        "saglasansamdasemojipodacikoristeodstraneorganizatorapoziva" : true
+    },
+    "idCall" : 6,
+    "user" : "korisnik3",
+    "field" : "tehničko-tehnološka oblast",
+    "institution" : "Institucija Test",
+    "postingDate" : "5/9/2021",
+    "callName" : "Javni poziv Test",
+    "toShowUser" : 1,
+    "status" : "prihvaceno",
+    "id" : 7,
+    "__v" : 0
+}

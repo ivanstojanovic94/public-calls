@@ -1,0 +1,60 @@
+{
+    "_id" : ObjectId("612b6e858265762fdcb7ce5d"),
+    "publicCallName" : "Javni poziv 404",
+    "date" : "29/8/2021",
+    "user" : "korisnik1",
+    "read" : 1,
+    "message" : "Vaša prijava za javni poziv Javni poziv 404 je prihvaćena!",
+    "id" : 5,
+    "__v" : 0
+}
+{
+    "_id" : ObjectId("613390af23fb1c45701af16a"),
+    "publicCallName" : "rac",
+    "date" : "4/9/2021",
+    "user" : "cica",
+    "read" : 1,
+    "message" : "Vaša prijava za javni poziv rac je prihvaćena!",
+    "id" : 9,
+    "__v" : 0
+}
+{
+    "_id" : ObjectId("6133915423fb1c45701af16b"),
+    "publicCallName" : "rac",
+    "date" : "4/9/2021",
+    "user" : "cica",
+    "read" : 1,
+    "message" : "Vaša prijava za javni poziv rac je prihvaćena!",
+    "id" : 10,
+    "__v" : 0
+}
+{
+    "_id" : ObjectId("6134e59baf72540d14e081de"),
+    "publicCallName" : "Javni poziv Test",
+    "date" : "5/9/2021",
+    "user" : "korisnik",
+    "read" : 1,
+    "message" : "Vaša prijava za javni poziv Javni poziv Test je prihvaćena!",
+    "id" : 11,
+    "__v" : 0
+}
+{
+    "_id" : ObjectId("6134e844af72540d14e081e2"),
+    "publicCallName" : "Javni poziv 404",
+    "date" : "5/9/2021",
+    "user" : "korisnik",
+    "read" : 1,
+    "message" : "Vaša prijava za javni poziv Javni poziv 404 je prihvaćena!",
+    "id" : 12,
+    "__v" : 0
+}
+{
+    "_id" : ObjectId("6134e9beaf72540d14e081e6"),
+    "publicCallName" : "Javni poziv Test",
+    "date" : "5/9/2021",
+    "user" : "korisnik3",
+    "read" : 1,
+    "message" : "Vaša prijava za javni poziv Javni poziv Test je prihvaćena!",
+    "id" : 13,
+    "__v" : 0
+}

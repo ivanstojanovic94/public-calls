@@ -1,0 +1,30 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  mat-chip {
+    max-width: 400px;
+    max-height: 100px;
+  
+  }
+
+  .mat-chip-list-stacked{
+    margin: 2em auto;
+    display: block;
+    justify-content: center;
+    
+  }
+
+  .example-viewport {
+    height: 200px;
+    width: 200px;
+    border: 1px solid black;
+  }
+  
+  .example-item {
+    height: 50px;
+  }
+
+  .mat-standard-chip {    
+    height: auto !important;
+  }

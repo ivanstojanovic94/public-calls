@@ -1,0 +1,42 @@
+<br><br><br><br><br>
+<div *ngIf="draftApps.length==0" style="color: white; text-align: center; font-size: 20px; font-weight: bolder;">
+    Nemate nijednu nedovršenu prijavu
+</div>
+<mat-accordion class="example-headers-align" multi>
+    <mat-expansion-panel *ngFor='let draft of draftApps; let i=index'>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                {{draft.callName}}
+            </mat-panel-title>
+            <mat-panel-description>
+                {{draft.postingDate}}
+
+
+            </mat-panel-description>
+
+
+        </mat-expansion-panel-header>
+        <table style="justify-content: center;" cellspacing="8">
+            <tr *ngFor='let item of draft.labels;let k=index'>
+                <td style="font-weight: bolder; font-size:15px">{{item}}:</td>
+                <td style="color: blueviolet; font-size:15px">{{values[i].displayArr[k]}}</td>
+                <td *ngIf="filePropertyFlags[i][k]"><a href="{{uploadsURI}}{{values[i].displayArr[k]}}" target="_blank">
+                        <mat-icon>attach_file</mat-icon>
+                    </a></td>
+
+            </tr>
+        </table>
+        <span class="expbtn">
+            <button mat-button (click)='editDraft(draft)'>
+                <mat-icon>create</mat-icon>
+            </button>
+            <button mat-button (click)='deleteDraft(draft)'>
+                <mat-icon>clear</mat-icon>
+            </button>
+        </span>
+
+
+
+
+    </mat-expansion-panel>
+</mat-accordion>

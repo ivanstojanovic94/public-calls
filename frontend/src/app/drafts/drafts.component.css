@@ -1,0 +1,26 @@
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+  
+  
+  
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+mat-accordion{
+  max-width: 500px;
+  margin: 2em auto;
+  
+ display: block;
+ justify-content: center;
+  
+}
+.expbtn{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}

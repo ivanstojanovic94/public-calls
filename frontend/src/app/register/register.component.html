@@ -1,0 +1,104 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="return()">
+
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <span class="example-spacer"></span>
+
+</mat-toolbar>
+
+<br><br><br><br><br><br>
+<mat-stepper linear #stepper>
+  <mat-step>
+    <form>
+      <ng-template matStepLabel>Podaci o nalogu</ng-template>
+      <div style="justify-content: center;">
+
+        <mat-form-field>
+          <mat-label>Korisničko ime</mat-label>
+          <input matInput type="text" name="username" [(ngModel)]='username' required>
+          <mat-error>Obavezno polje!</mat-error>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+          <mat-label>Lozinka</mat-label>
+          <input matInput type="password" name="password" [(ngModel)]='password' required>
+          <mat-error>Obavezno polje!</mat-error>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+          <mat-label>Potvrda lozinke</mat-label>
+          <input matInput type="password" name="confirmPassword" [(ngModel)]='confirmPassword' required>
+          <mat-error>Obavezno polje!</mat-error>
+        </mat-form-field>
+      </div>
+
+      <br>
+
+
+      <div>
+        <button mat-button matStepperPrevious [disabled]="stepper.selectedIndex==0">Prethodno</button>
+        <button mat-button matStepperNext>Sledeće</button>
+      </div>
+    </form>
+    <span style="color: red; font-size: 15px;">{{message}}</span>
+  </mat-step>
+
+  <mat-step>
+    <ng-template matStepLabel>Podaci o korisniku</ng-template>
+
+
+
+
+    <div>
+      <form (ngSubmit)="onSubmit(stepper)" [formGroup]="form" *ngIf="form">
+
+
+        <div *ngFor="let question of questions" class="form-row">
+          <div [formGroup]="form">
+            <label [attr.for]="question.name"
+              style="color: darkblue; font-family: 'Courier New', Courier, monospace; font-weight: bold; font-size: 17px;">{{question.label}}</label>
+
+            <div [ngSwitch]="question.type">
+
+
+              <input *ngSwitchCase="'input'" [formControlName]="question.name" [id]="question.name"
+                [type]="question.inputType">
+
+              <select [id]="question.name" *ngSwitchCase="'select'" [formControlName]="question.name">
+                <option *ngFor="let opt of question.options" [value]="opt.value">{{opt.value}}</option>
+              </select>
+
+              <mat-radio-group *ngSwitchCase="'radio'" [formControlName]="question.name">
+                <mat-radio-button *ngFor="let item of question.options" [value]="item.value">
+                  {{item.value}}&nbsp;&nbsp;&nbsp;</mat-radio-button>
+              </mat-radio-group>
+
+              <section *ngSwitchCase="'checkbox'">
+                <mat-checkbox [formControlName]="question.name"></mat-checkbox>
+              </section>
+            </div>
+            <div class="errorMessage" *ngIf="!isValid(question)" style="font-size: 12px;">Polje "{{question.label}}" je
+              obavezno!</div>
+
+
+          </div>
+        </div>
+
+        <div class="form-row">
+          <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Pošalji</button>
+        </div>
+        <br>
+        <button mat-button matStepperPrevious>Prethodno</button>
+        <button mat-button matStepperNext [disabled]="stepper.selectedIndex==stepper.steps.length-1">Sledeće</button>
+      </form>
+
+
+    </div>
+
+
+
+  </mat-step>
+</mat-stepper><br>

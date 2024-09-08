@@ -1,0 +1,39 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="return()">
+
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <span class="example-spacer"></span>
+  <button mat-icon-button (click)="notifications()">
+    <mat-icon>notification_important</mat-icon>
+  </button>
+  <button mat-icon-button (click)="account()">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+</mat-toolbar>
+<br><br><br><br>
+<div *ngIf="notificationsArray.length==0"
+  style="color: white; text-align: center; font-size: 20px; font-weight: bolder;">
+  Nemate nijedno obaveštenje
+</div>
+<div style="margin: auto; width: 30%;">
+  <mat-chip-list class="mat-chip-list-stacked" aria-label="Color selection">
+    <mat-chip *ngFor="let chip of notificationsArray" selected [color]="primary">
+
+      <span> {{chip.date}}
+
+
+        <br><br> {{chip.message}}
+      </span>
+
+      <button mat-button (click)="deleteMessage(chip)">
+        <mat-icon>clear</mat-icon>
+      </button>
+      <button mat-button *ngIf="chip.read==0" (click)="markAsRead(chip)">
+        <mat-icon>email</mat-icon>
+      </button>
+
+    </mat-chip>
+  </mat-chip-list>
+</div>
+<br>

@@ -1,0 +1,80 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="return()">
+
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <span class="example-spacer"></span>
+
+</mat-toolbar>
+<br><br>
+
+
+<mat-card>
+  <mat-card-title>
+    <span
+      style="color: darkblue; font-size: 40px; font-weight: bolder; font-family: 'Courier New', Courier, monospace;">Prijava</span>
+    <br><br>
+  </mat-card-title>
+  <mat-card-content>
+    <div>
+      <form (ngSubmit)="onSubmit()" [formGroup]="form" *ngIf="form" enctype='multipart/form-data'>
+
+
+        <div *ngFor="let question of questions" class="form-row">
+          <div [formGroup]="form">
+            <label [attr.for]="question.name"
+              style="color: darkblue; font-family: 'Courier New', Courier, monospace; font-weight: bold; font-size: 17px;">{{question.label}}</label>
+
+            <div [ngSwitch]="question.type">
+
+
+              <input *ngSwitchCase="'input'" [formControlName]="question.name" [id]="question.name"
+                [type]="question.inputType">
+
+
+              <div class="form-group" *ngSwitchCase="'file'">
+
+                <input type="file" [id]="question.name" (change)="onFileChange($event, question.name)"
+                  [formControlName]="question.name" #fileUpload class="file-input">
+                <div class="file-upload">
+                  <button mat-mini-fab color="primary" class="upload-btn" type="button" (click)="fileUpload.click()">
+                    <mat-icon>attach_file</mat-icon>
+                  </button>
+                  {{fileNames[question.name]}}
+
+
+                </div>
+              </div>
+
+
+              <select [id]="question.name" *ngSwitchCase="'select'" [formControlName]="question.name">
+                <option *ngFor="let opt of question.options" [value]="opt.value">{{opt.value}}</option>
+              </select>
+
+              <mat-radio-group *ngSwitchCase="'radio'" [formControlName]="question.name">
+                <mat-radio-button *ngFor="let item of question.options" [value]="item.value">
+                  {{item.value}}&nbsp;&nbsp;&nbsp;</mat-radio-button>
+              </mat-radio-group>
+
+              <section *ngSwitchCase="'checkbox'">
+                <mat-checkbox [formControlName]="question.name"></mat-checkbox>
+              </section>
+            </div>
+            <div class="errorMessage" *ngIf="!isValid(question)" style="font-size: 12px;">Polje "{{question.label}}" je
+              obavezno!</div>
+
+
+          </div>
+        </div>
+
+        <div class="form-row">
+          
+          <button mat-raised-button color="primary" type="button" (click)="save()">Snimi</button> &nbsp; &nbsp;
+          <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Pošalji</button>
+        </div>
+      </form>
+
+
+    </div>
+  </mat-card-content>
+</mat-card>
