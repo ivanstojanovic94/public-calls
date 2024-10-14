@@ -2,6 +2,7 @@ import express from 'express';
 import User from '../models/user';
 
 export class UserGeneralController{
+
     login = (req: express.Request, res: express.Response)=>{
         let username=req.body.username;
         let password=req.body.password;
@@ -28,12 +29,8 @@ export class UserGeneralController{
     }
 
     register=(req: express.Request, res: express.Response)=>{
-       
         User.find({'username':req.body.username},(err,users)=>{
-            
-            
             if(users.length!=0){
-                
                 res.json({'message':'usernameExists'});
             }else{
                 User.find({},(err,users)=>{
@@ -51,6 +48,5 @@ export class UserGeneralController{
                 })
             }
         })
-       
     }
 }

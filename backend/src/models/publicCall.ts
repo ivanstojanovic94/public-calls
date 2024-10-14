@@ -1,6 +1,5 @@
 import mongoose from 'mongoose';
 
-
 const Schema = mongoose.Schema;
 
 let PublicCall = new Schema({
@@ -11,7 +10,6 @@ let PublicCall = new Schema({
         type: String
     },
     publishDate: {
-
         type: String
     },
     deadline: {
@@ -28,12 +26,10 @@ let PublicCall = new Schema({
     },
     institution: {
         type: String
-
     },
     applicationDataConfig: {
         type: Array
     }
-
 });
 
 export default mongoose.model('PublicCall', PublicCall, 'publicCalls');

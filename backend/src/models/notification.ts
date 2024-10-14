@@ -2,7 +2,6 @@ import mongoose from 'mongoose';
 
 const Schema = mongoose.Schema;
 
-
 let Notification = new Schema({
     id:{
         type: Number
@@ -16,15 +15,12 @@ let Notification = new Schema({
     publicCallName: {
         type: String
     },
-
     user: {
-
         type: String
     },
     read:{
         type: Number
     }
-
 });
 
 export default mongoose.model('Notification', Notification, 'notifications');

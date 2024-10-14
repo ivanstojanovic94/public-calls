@@ -1,7 +1,5 @@
 import express from 'express';
-import User from '../models/user';
 import PublicCall from '../models/publicCall';
-
 
 export class AdminController {
     
@@ -20,7 +18,4 @@ export class AdminController {
             }
             })
         }
-
-        
     }
-

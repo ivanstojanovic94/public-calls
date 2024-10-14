@@ -18,9 +18,7 @@ app.use(bodyParser.json());
 app.use('/uploads', express.static(path.join('uploads')));
 
 const mongoURI='mongodb://localhost:27017/publicallsdb';
-
 mongoose.connect('mongodb://localhost:27017/publicallsdb');
-
 const connection = mongoose.connection;
 
 connection.once('open', ()=>{

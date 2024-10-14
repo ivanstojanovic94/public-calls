@@ -10,6 +10,7 @@ notificationsRouter.route('/pushNotification').post(
 notificationsRouter.route('/getNotifications').post(
     (req,res)=>new NotificationsController().getNotifications(req,res)
 );
+
 notificationsRouter.route('/deleteNotification').post(
     (req,res)=>new NotificationsController().deleteNotification(req,res)
 );

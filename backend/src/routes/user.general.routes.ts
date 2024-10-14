@@ -1,5 +1,6 @@
 import express from 'express';
 import { UserGeneralController } from '../controllers/user.general.controller';
+
 const userGeneralRouter = express.Router();
 
 userGeneralRouter.route('/login').post(

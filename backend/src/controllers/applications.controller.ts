@@ -1,7 +1,6 @@
 import express from 'express';
 import Application from '../models/application';
 
-
 export class ApplicationsController{
 
     saveApplication=(req: express.Request, res: express.Response)=>{
@@ -20,7 +19,6 @@ export class ApplicationsController{
         })
     }
 
-
     getAllDraftedApplications=(req: express.Request, res: express.Response)=>{
         let username=req.body.username;
         Application.find({$and: [{'status': {$eq:'nedovrseno'}}, {'user': {$eq: username}}]},(err,drafts)=>{
@@ -29,7 +27,6 @@ export class ApplicationsController{
                 res.json(drafts);
             }
         })
-
     }
 
     getAllApplications=(req: express.Request, res: express.Response)=>{
@@ -81,7 +78,6 @@ export class ApplicationsController{
         let docs = Application.aggregate([
             {
                 $group: {
-                 
                   _id: '$idCall',
                   count: { $sum: 1 }
                 }
@@ -90,19 +86,16 @@ export class ApplicationsController{
             //console.log(apps);
             res.json(apps);
         })
-        
     }
     numberOfAppsPerScienceField=(req: express.Request, res: express.Response)=>{
         let docs = Application.aggregate([
             {
                 $group: {
-                 
                   _id: '$field',
                   count: { $sum: 1 }
                 }
             }
         ],(err,apps)=>{
-            
             res.json(apps);
         })
         
@@ -111,16 +104,12 @@ export class ApplicationsController{
         let docs = Application.aggregate([
             {
                 $group: {
-                 
                   _id: '$institution',
                   count: { $sum: 1 }
                 }
             }
         ],(err,apps)=>{
-            
             res.json(apps);
         })
-        
     }
-    
 }

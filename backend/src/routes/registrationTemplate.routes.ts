@@ -1,5 +1,6 @@
 import express from 'express';
 import { RegistrationTemplateController } from '../controllers/registrationTemplate.controller';
+
 const registrationTemplateRouter = express.Router();
 
 registrationTemplateRouter.route('/getTemplate').get(

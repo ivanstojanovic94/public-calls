@@ -1,8 +1,6 @@
 import express from 'express';
 import { ApplicationsController } from '../controllers/applications.controller';
 
-
-
 const applicationsRouter = express.Router();
 
 applicationsRouter.route('/saveApplication').post(
@@ -38,4 +36,5 @@ applicationsRouter.route('/numberOfAppsPerScienceField').get(
 applicationsRouter.route('/numberOfAppsPerInstitution').get(
     (req,res)=>new ApplicationsController().numberOfAppsPerInstitution(req,res)
 );
+
 export default applicationsRouter;
