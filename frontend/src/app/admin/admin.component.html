@@ -1,29 +1,22 @@
 <mat-toolbar color="primary">
     <span class="example-spacer"></span>
-
     <button mat-icon-button (click)="account()">
         <mat-icon>account_circle</mat-icon>
     </button>
 </mat-toolbar>
-
 <mat-tab-group mat-align-tabs="center" backgroundColor="primary">
     <mat-tab label="OTVARANJE POZIVA">
         <br><br>
-
         <mat-stepper linear #stepper>
             <mat-step>
                 <ng-template matStepLabel>Osnovne informacije o pozivu</ng-template>
-
                 <form>
-
-
                     <mat-form-field>
                         <mat-label>Naziv</mat-label>
                         <input matInput type="text" name="name" [(ngModel)]='javniPoziv.name' required>
                         <mat-error>Obavezno polje!</mat-error>
                     </mat-form-field><br>
                     <mat-form-field>
-
                         <mat-label>Naučno polje</mat-label>
                         <mat-select name="scienceField" [(ngModel)]='javniPoziv.scienceField'>
                             <mat-option *ngFor='let ug of scienceFields' [value]="ug">{{ug}}</mat-option>
@@ -35,45 +28,29 @@
                         <mat-error>Obavezno polje!</mat-error>
                     </mat-form-field><br>
                     <mat-form-field>
-
                         <mat-label>Rok prijave</mat-label>
                         <input matInput type="date" name="deadline" [(ngModel)]='javniPoziv.deadline' required>
                         <mat-error>Obavezno polje!</mat-error>
                     </mat-form-field><br>
                     <mat-form-field>
-
                         <mat-label>Opšte informacije</mat-label>
                         <textarea matInput name="basicInfo" [(ngModel)]='javniPoziv.basicInfo'></textarea>
-
                     </mat-form-field><br>
                     <mat-form-field>
-
                         <mat-label>Grupa korisnika</mat-label>
                         <mat-select name="userGroup" [(ngModel)]='javniPoziv.userGroup'>
                             <mat-option *ngFor='let ug of grupeKorisnika' [value]="ug">{{ug}}</mat-option>
                         </mat-select>
-
-
                     </mat-form-field>
                     <div>
                         <button mat-button matStepperPrevious [disabled]="stepper.selectedIndex==0">Prethodno</button>
                         <button mat-button matStepperNext>Sledeće</button>
                     </div>
-
-
-
-
-
-
-
                 </form>
-
             </mat-step>
             <mat-step>
-
                 <form>
                     <ng-template matStepLabel>Definiši podatke</ng-template>
-
                     <mat-form-field>
                         <mat-label>Traženi podatak</mat-label>
                         <input matInput type="text" name="fieldName" [(ngModel)]='label'>
@@ -92,8 +69,6 @@
                             <mat-option value="radio">Radio dugme</mat-option>
                         </mat-select>
                     </mat-form-field><br>
-
-
                     <mat-checkbox name="required" [(ngModel)]='requiredData'>Obavezan podatak?</mat-checkbox>
                     <br><br><br>
                     <div *ngIf='typeChecker=="select" || typeChecker=="radio"' style="justify-content: center;">
@@ -101,27 +76,22 @@
                         <mat-form-field>
                             <mat-label>Naziv</mat-label>
                             <input matInput type="text" name="opcija" [(ngModel)]='optionValue'>
-
                         </mat-form-field>
                         <br><br><br>
                         <button mat-raised-button color="primary" (click)="addOption()">Dodaj opciju</button>
-
                     </div>
                     <br><br><br>
                     <div>
                         <button mat-raised-button color="primary" (click)="addData()">Dodaj podatak</button>
                     </div>
                     <br><br>
-
                     <div>
                         <button mat-button matStepperPrevious>Prethodno</button>
                         <button mat-button matStepperNext (click)='setDatesPretty()'>Sledeće</button>
                     </div>
                 </form>
-
             </mat-step>
             <mat-step>
-
                 <ng-template matStepLabel>
                     Pregled</ng-template>
                 <div
@@ -137,19 +107,14 @@
                     <ul>
                         <li *ngFor='let poziv of javniPozivPodaci'>{{poziv.label}}</li>
                     </ul>
-
                     <button mat-raised-button color="primary" (click)="openCall(stepper)">Objavi</button>
                 </div><br><br>
                 <div>
                     <button mat-button matStepperPrevious>Prethodno</button>
                     <button mat-button matStepperNext
                         [disabled]="stepper.selectedIndex === stepper.steps.length-1">Sledeće
-
                     </button>
-
                 </div>
-
-
             </mat-step>
         </mat-stepper>
         <br><br>
@@ -164,5 +129,4 @@
     <mat-tab label="IZVEŠTAJI">
         <app-reports></app-reports>
     </mat-tab>
-
 </mat-tab-group>

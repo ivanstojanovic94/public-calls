@@ -8,6 +8,7 @@ import { UserGeneralService } from '../user.general.service';
   templateUrl: './account.component.html',
   styleUrls: ['./account.component.css']
 })
+
 export class AccountComponent implements OnInit {
 
   constructor(private userGeneralService: UserGeneralService, private router: Router) { }
@@ -15,9 +16,7 @@ export class AccountComponent implements OnInit {
   ngOnInit(): void {
     this.user=JSON.parse(localStorage.getItem("loggedUser"));
     //this.userData=Object.keys(this.user.data);
-    
   }
-
 
   messagePassword: string;
   currentPass: string;
@@ -41,7 +40,6 @@ export class AccountComponent implements OnInit {
     }else{
     this.router.navigate(['plainUser']);
     }
-    
   }
 
   signOut(){
@@ -58,10 +56,7 @@ export class AccountComponent implements OnInit {
     
     if(this.pass != this.passconfirm || this.pass=="" || this.pass==null || this.passconfirm=="" || this.passconfirm==null){
       this.messagePassword="Lozinka i potvrda lozinke se razlikuju!";
-      
-
     }else{
-      
     
       //change on back
       this.userGeneralService.changePassword(this.user.username,this.pass).subscribe(res=>{
@@ -72,8 +67,6 @@ export class AccountComponent implements OnInit {
       });
       this.user.password=this.pass;
 
-
-      
     }}
     setTimeout(()=>{
       this.currentPass="";
@@ -84,7 +77,6 @@ export class AccountComponent implements OnInit {
       
     },10000)
   }
-
 
   deactivateAccount(){
     if(this.currentPass != this.user.password || this.currentPass=="" || this.currentPass==null){
@@ -111,7 +103,5 @@ export class AccountComponent implements OnInit {
           this.success=false;
 
     },5000)
-    
   }
-
 }

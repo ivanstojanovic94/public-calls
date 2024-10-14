@@ -4,8 +4,6 @@ mat-card {
     text-align: center;
     display: block;
     justify-content: center;
-    
-    
   }
 
   mat-tab-label{
@@ -17,7 +15,6 @@ mat-card {
       margin: 2em auto;
       text-align: center;
       display: block;
-      
   }
 
  .green{
@@ -32,7 +29,6 @@ mat-card {
     margin: 2em auto;
     width: 40%;
     justify-content: center;
-    
   }
 
   tr.example-detail-row {
@@ -55,9 +51,7 @@ mat-card {
     overflow: hidden;
     display: flex;
   }
-  
-  
-  
+
   .example-element-symbol {
     font-weight: bold;
     font-size: 40px;
@@ -66,13 +60,11 @@ mat-card {
   
   .example-element-description {
     padding: 16px;
-    
   }
   
   .example-element-description-attribution {
     opacity: 0.5;
   }
-
 
   .example-spacer {
     flex: 1 1 auto;
