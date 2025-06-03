@@ -49,29 +49,20 @@ export class RegisterComponent implements OnInit {
   
   newUser: User;
   displayed: Display[]=[];
-
   
   isValid(question) { 
-   
     return this.form.controls[question.name].valid; 
-  
     }
 
   toFormGroup() {
-    
-    
     const group: any = {};
 
     this.questions.forEach(question => {
-     
       group[question.name] = question.required ? new FormControl(question.value || '', Validators.required)
                                               : new FormControl(question.value || '');
     });
     return new FormGroup(group);
   }
-
-
-
 
   onSubmit(stepper: MatStepper){
     //register user
@@ -114,25 +105,17 @@ export class RegisterComponent implements OnInit {
           //username already exists
         }
       })
-
-      
-
     }
   }
 
   return(){
     this.router.navigate(['/']);
-    
   }
- 
-  
-
 }
 
 @Component({
   selector: 'app-registration-confirmation',
   templateUrl: './registration-confirmation.html',
- 
 })
 export class RegistrationConfirmation{
   constructor(private router: Router){}

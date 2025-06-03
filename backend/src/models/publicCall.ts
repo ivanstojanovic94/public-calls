@@ -32,4 +32,4 @@ let PublicCall = new Schema({
     }
 });
 
-export default mongoose.model('PublicCall', PublicCall, 'publicCalls');
+export default mongoose.model('PublicCall', PublicCall, 'PublicCalls');

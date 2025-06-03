@@ -23,4 +23,4 @@ let Notification = new Schema({
     }
 });
 
-export default mongoose.model('Notification', Notification, 'notifications');
+export default mongoose.model('Notification', Notification, 'Notifications');

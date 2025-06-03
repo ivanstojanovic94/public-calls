@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const Schema = mongoose.Schema;
 
@@ -11,4 +11,4 @@ let RegistrationTemplate = new Schema({
     }
 });
 
-export default mongoose.model("RegistrationTemplate", RegistrationTemplate, "registrationTemplates");
+export default mongoose.model('RegistrationTemplate', RegistrationTemplate, 'RegistrationTemplates');

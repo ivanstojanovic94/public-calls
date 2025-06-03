@@ -17,7 +17,6 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
   username: string;
   password: string;
   message: string;
@@ -25,12 +24,9 @@ export class LoginComponent implements OnInit {
   //usernameCtrl=new FormControl('',[Validators.required]);
   //passwordCtrl=new FormControl('',Validators.required);
 
-
-
   login(){
     this.userGeneralService.login(this.username, this.password).subscribe((user:User)=>{
       if(user){
-
         localStorage.setItem('loggedUser',JSON.stringify(user));
         if(user.type==0){
           this.router.navigate(['plainUser']);
@@ -43,12 +39,5 @@ export class LoginComponent implements OnInit {
         this.password="";
       }
     })
-
-    
   }
-
-
-
-
-
 }
